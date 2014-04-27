@@ -10,8 +10,8 @@ The following code book explains the cleaning data process:
 
 ##2. Adjusting format
 
-* "test and "train" datasets were then transformed into tables using the <read.table> function specifiyng thetext argument as TRUE so it recognizes the origin format of the data. The separation observed was an empty space, so the arg sep=" ". Each line or row did not have the same columns so the fill argument filled missing colmns with NA.
-* the time spent to do certain parts of the code was quite long so time to time the <write.csv> function was used to save the resulting data frames.
+* "test and "train" datasets were then transformed into tables using the read.table function specifiyng thetext argument as TRUE so it recognizes the origin format of the data. The separation observed was an empty space, so the arg sep=" ". Each line or row did not have the same columns so the fill argument filled missing colmns with NA.
+* the time spent to do certain parts of the code was quite long so time to time the write.csv function was used to save the resulting data frames.
 * After doing this there were a lot of missing values that came from double spaces in the original data, so a <for loop> was done to eliminate NA values row by row. Each row now had 561 values, corresponding to the number of features specified. The for loop was divided in some pieces because of the time spent to completed in order to avoid an excessive amount of time running it.
 * "test3" and "train3" are the data frames for each group that will be used afterwards in the new tidy data.
 
@@ -25,14 +25,14 @@ The following code book explains the cleaning data process:
 
 * in both datasets "train3" and "test3" we used the names in features as the name for each column
 * we created a "group" column so we can identify which rows correspond to data from "test" and which from "train". The group variable has 2 levels: "train" or "test".
-* both datasets had the same column names and the same number of columns so the <cbind> function was used to merge both datasets into data1.
+* both datasets had the same column names and the same number of columns so the cbind function was used to merge both datasets into data1.
 * the identical funtcion was used to see if there was been a good merge without eliminating rows of observations.
 * data2 was created as a subset of data1 but only with the columns that we were interested by using the numeric vector: "used.feat".
 
 ##5. Arreging new tidy data
 * the tidy data specified had the average of the values for each subject and variable
 * tidy was created as a data frame with the first column as the names of the variables in data2 and the second as the value that was the mean of each column of the data2 dataset.
-* a new column was created to specify if the vale was a "mean" or "standard deviation". I used the <grepl> function to have a logical vector and combined with the <ifelse function>.
+* a new column was created to specify if the vale was a "mean" or "standard deviation". I used the grepl function to have a logical vector and combined with the ifelse function.
 * the same process was repeated to add more information extracted from the original name of the variable, creating the following columns:
 
     * AXIS: indicates the axis measured and the levels are: "X","Y","Z" and magnitude if it was a magnitude.
