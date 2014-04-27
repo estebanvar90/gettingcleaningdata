@@ -18,3 +18,5 @@ The script names run_analysis.R included in this repo is made in order to transf
 The data was obtained in the following link: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 The obtained dataset summaries the average value of the mean and standard deviation of each variable for each activity and each subject and has been arranged to be easier to read in order to make further analysis.
+
+###The file "codebook.md" has the information regarding the script used.
